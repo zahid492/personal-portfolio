@@ -1,0 +1,25 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zahid492/personal-portfolio.git"
+  },
+  "keywords": [
+    "Portfolio"
+  ],
+  "author": "Zahid Rahman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zahid492/personal-portfolio/issues"
+  },
+  "homepage": "https://github.com/zahid492/personal-portfolio#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

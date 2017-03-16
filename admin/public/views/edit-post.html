@@ -1,0 +1,58 @@
+<div class="login-page">
+	<div class="account_grid">
+		<div class="col-md-6 login-right wow fadeInRight new-post" data-wow-delay="0.4s">
+			<h3>EDIT YOUR POST</h3>
+			<form ng-submit="editPost()">
+				<div>
+					<span>Title<label>*</label></span>
+					<input type="text" ng-model="title" required> 
+				</div>
+				<span>Content:<label>*</label></span>
+				<div text-angular ng-model="body">	 			
+				</div>
+
+			   <tags-input ng-model="tags" display-property="name" placeholder="Add a country" replace-spaces-with-dashes="false">
+				      <auto-complete source="loadCategories($query)"
+				                     min-length="0"
+				                     load-on-focus="true"
+				                     load-on-empty="true"
+				                     max-results-to-show="32"
+				                     template="my-custom-template"></auto-complete>
+                </tags-input>
+			
+
+				<input type="submit" value="Edit">
+				<a class="cancel-link" ng-href="/#/post/{{post._id}}">Cancel</a>
+			</form>
+
+				 <div>
+					<span>Upload Image Link</span>
+					<input type="file" file-model="myFile" id="image"  accept="image/*" onchange="angular.element(this).scope().changeToBase64(this,'image')"  class="form-control" accept="image/x-png, image/gif, image/jpeg" required> 
+					<input type="submit" value="Upload Image" ng-click="uploadImage()">
+				</div>    
+	   </div>
+		<div class="clearfix"> </div>
+	</div>
+</div>
+
+
+<div class="row">
+		<div class='list-group gallery'>
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3' ng-repeat="image in images">
+                <a class="fancybox thumbnail" rel="ligthbox" href="http://zahidur.me/images/blog-image/{{image.image}}">
+                    <img class="img-responsive" alt="" src="http://zahidur.me/images/blog-image/{{image.image}}" />
+                    <h6>http://zahidur.me/images/blog-image/{{image.image}}</h6>
+
+                </a>
+            </div> <!-- col-6 / end -->
+
+        </div> <!-- list-group / end -->
+	</div> <!-- row / end -->
+
+
+    <script type="text/ng-template" id="my-custom-template">
+      <div class="right-panel">
+        <span ng-bind-html="$highlight($getDisplayText())"></span>
+        <span>({{data.name}})</span>
+      </div>
+    </script>

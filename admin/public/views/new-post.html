@@ -1,0 +1,42 @@
+<div class="login-page">
+	<div class="account_grid">
+		<div class="log-in-alert" ng-hide="isLoggedIn()">
+		 	<h3>You need to <a href="/#/login"><span>Log In</span></a> or <a href="/#/register"><span>Register</span></a> before you can add a post.</h3>
+		</div>
+		<div ng-show="isLoggedIn()" class="col-md-6 login-right wow fadeInRight new-post" data-wow-delay="0.4s">
+			<h3>ADD A NEW POST</h3>
+			<form ng-submit="newPost()">
+				<div>
+					<span>Title<label>*</label></span>
+					<input type="text"  ng-model="title" required> 
+				</div>
+				<span>Content<label>*</label></span>
+				<div text-angular ng-model="body">	 
+				</div>
+				<div>
+					<span>Banner Link</span>
+					<input type="text"  ng-model="banner"> 
+				</div>
+
+			   <tags-input ng-model="tags" display-property="name" placeholder="Add a country" replace-spaces-with-dashes="false">
+				      <auto-complete source="loadCategories($query)"
+				                     min-length="0"
+				                     load-on-focus="true"
+				                     load-on-empty="true"
+				                     max-results-to-show="32"
+				                     template="my-custom-template"></auto-complete>
+                </tags-input>
+			
+				<input type="submit" value="Post">
+			</form>
+	   </div>
+		<div class="clearfix"> </div>
+	</div>
+</div>
+
+    <script type="text/ng-template" id="my-custom-template">
+      <div class="right-panel">
+        <span ng-bind-html="$highlight($getDisplayText())"></span>
+        <span>({{data.name}})</span>
+      </div>
+    </script>
