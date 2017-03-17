@@ -9,8 +9,8 @@
  * Main module of the application.
  */
 var portfolioApp = angular
-  .module('portfolioApp', ['ui.router', 'ngResource', 'ngSanitize','angularMoment','angularUtils.directives.dirDisqus','ngDisqus']); 
-portfolioApp.constant('apiUrl', 'http://localhost:3000/api/');
+  .module('portfolioApp', ['ui.router', 'ngSanitize','angularMoment','angularUtils.directives.dirDisqus','ngDisqus','angularUtils.directives.dirPagination']); 
+portfolioApp.constant('apiUrl', 'http://localhost:3000/');
 portfolioApp.config(['$httpProvider', '$stateProvider', '$urlRouterProvider','$locationProvider','$disqusProvider',
   function ($httpProvider, $stateProvider, $urlRouterProvider,$locationProvider,$disqusProvider) {
     $disqusProvider.setShortname('zahidur-me');
@@ -26,7 +26,15 @@ portfolioApp.config(['$httpProvider', '$stateProvider', '$urlRouterProvider','$l
       .state('app.single_blog', {
         url: '/blog/:id',
         templateUrl: 'js/angular/views/single_blog.html',
-        controller:'HomeController'
+        controller:'SingleBlogController'
+      }).state('app.blogs', {
+        url: '/blogs',
+        templateUrl: 'js/angular/views/blogs.html',
+        controller:'BlogsController'
+      }).state('app.not_found', {
+        url: '/404',
+        templateUrl: 'js/angular/views/404.html',
+        controller:'NotFoundController'
       });
 
 $urlRouterProvider.otherwise(function($injector, $location){

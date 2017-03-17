@@ -14,6 +14,9 @@
 				<div text-angular ng-model="body">	 
 				</div>
 				<div>
+					<textarea ng-model="highlites"></textarea>
+				</div>				
+				<div>
 					<span>Banner Link</span>
 					<input type="text"  ng-model="banner"> 
 				</div>
@@ -27,6 +30,13 @@
 				                     template="my-custom-template"></auto-complete>
                 </tags-input>
 			
+				<div>
+					<span>Status<label>*</label></span>
+					<select ng-model="status">
+					<option ng-selcted="status===1" value="1">Show</option>
+					<option ng-selected="status===0" value="0">Hide</option>
+					</select>
+				</div>
 				<input type="submit" value="Post">
 			</form>
 	   </div>

@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
-				<a class="navbar-brand page-scroll" ui-sref="app.home">ABOUT ME </a>
+				<a class="navbar-brand page-scroll" ui-sref="app.home">ME </a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
@@ -28,11 +28,6 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="single-intro-caption">
-							<h4 ng-bind="blog.title"></h4>
-					   <span class="blog-info">
-						<a href="#" class="blog-info" ng-bind="blog.aothor.fullname"></a> - <i class="fa fa-clock-o" aria-hidden="true"></i> {{blog.createdOn | amUtc | amDateFormat:'dddd, MMMM Do YYYY, HH:mm'}} </span>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -47,13 +42,9 @@
 <!-- 						<h4>By spite about do of do allow blush</h4>
 						<span class="blog-info">
 						<a href="#" class="blog-info">John Doe</a> - <i class="fa fa-clock-o" aria-hidden="true"></i> 7 January 2017 </span> -->
-					
-					<div class="blog-image" ng-bind-html="blog.body">
-						<!-- <img src="images/blog-image/1.jpg" class="img-responsive" alt="blog-image"> -->
-					</div>
-						
+					<h1> 404 Not Found !!!!!!!</h1>
+	
 						<hr>
-<dir-disqus config="disqusConfig"></dir-disqus>
 
 
 					</div>
@@ -65,7 +56,7 @@
 					<div class="widget">
                         <h5>Tags</h5>
                         <div class="tags">
-                            <a ng-repeat="tag in tags | orderBy" ng-click="changeByTag(tag)" style="margin-left: 3px;">{{tag}}</a>
+                            <a ng-repeat="tag in tags | orderBy" ui-sref="app.blogs" ng-click="changeByTag(tag)" style="margin-left: 3px;">{{tag}}</a>
                         </div>
                     </div>
                     <!-- tags end -->
@@ -76,45 +67,7 @@
 	
 	
 
-	<!-- section blog start -->
-	<section id="section-blog" class="section-padding">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="feature-heading text-center">
-						<h2>RELATED POST</h2> 
-					</div>
-				</div>
-				<div class="col-md-12 col-sm-12">
-					<div class="feature-wrap">
-						<div class="row">
-						<!-- blog one -->
-							<div class="col-md-4 col-sm-12 col-xm-12" ng-repeat="blog in blogs">
-								
-								<div class="one-blog">
-									<div class="blog-image">
-									</div>
-									<a ui-sref="app.single_blog({id:blog.link})" target="_blank"><h4 ng-bind="blog.title"></h4></a>
-									<span class="blog-info"><a href="" class="blog-info" ng-bind="blog.author.fullname"></a> - <i class="fa fa-clock-o" aria-hidden="true"></i>{{blog.createdOn | amUtc | amDateFormat:'dddd, MMMM Do YYYY, HH:mm'}}</span>
-									<p ng-bind-html="blog.highlites"></p>
-									
-								</div>
-								
-							</div>
-						</div>
 
-					</div>
-					<!--  feature wrap end -->
-				</div>
-				<!--  col end -->
-			</div>
-			<!-- row end -->
-		</div>
-		<!-- container end -->
-	</section>
-	<!-- section features end -->
-	
-	
 	
 	<!-- section footer start -->
 	<footer id="section-footer">
@@ -131,7 +84,7 @@
 							<li><a href="http://stackoverflow.com/users/5066353/zahid-rahman"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a></li>
 							<li><a href="https://github.com/zahid492"><i class="fa fa-github" aria-hidden="true"></i></a></li>						
 						</ul>
-<!-- 						<p class="copy">copyright &copy; <span>2017 themefabby, All rights Reserved. </span></p> -->
+						<p class="copy">copyright &copy; <span>2017 themefabby, All rights Reserved. </span></p>
 					</div>
 				</div>
 			</div>

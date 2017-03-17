@@ -35,7 +35,7 @@
 								<span>I'm </span>
 								<span class="cd-words-wrapper">
 									<b class="is-visible">Zahidur Rahman</b>
-									<b>a Full Stack Software Developer.</b>
+									<b>a Software Developer.</b>
 								</span>
 							</h1>
 							<!-- type headline end -->
@@ -65,9 +65,9 @@
 				<div class="col-md-8 col-sm-8 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
 					<div class="about-wrap" >
 						<h2>hello! i am Zahidur Rahman</h2>
-						<h4>Full Stack Software Developer</h4>
+						<h4>Software Developer</h4>
 						<p style="text-align:justify;">I am a passionate full stack developer can take any challenge and work under pressure.More than 2+ years extensive hands on experience of professional software development.</p>
-						<p style="text-align:justify;">Always try to make something new and creative. Programming is not only my profession but also my hobby and my passion like to work with creative and friendly people.One thing i believe that is never quitting.</p>			<a target="_blank" href="https://drive.google.com/file/d/0Byfo8ZQ9aQ-eNzJlQVo3YzhXVjg/view?usp=sharing" class="btn btn-black">Download CV</a>						<a href="#section-contact" class="btn btn-black">Contact Me</a> 
+						<p style="text-align:justify;">Always try to make something new and creative. Programming is not only my profession but also my hobby and my passion like to work with creative and friendly people.One thing i believe that is never quitting.</p>			<!-- <a target="_blank" href="https://drive.google.com/file/d/0Byfo8ZQ9aQ-eNzJlQVo3YzhXVjg/view?usp=sharing" class="btn btn-black">Download CV</a>	 -->					<a href="#section-contact" class="btn btn-black">Contact Me</a> 
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-12 visible-md visible-lg wow fadeInUp" data-wow-delay="0.8s">
@@ -125,7 +125,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="section-heading">
-                        <h2>My Personal Portfolios</h2>
+                        <h2>My Personal Portfolio</h2>
                         <p>Here is a few perosnal projects that i worked in before and continuing at now, there is no offcial projects that i have not authorized, without this in my <a style="color: blue;" href="https://github.com/zahid492">github</a> has consist few projects. 
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                                 <div class="portfolio-caption">
                                     <h4>Preview</h4>
                                     <a href="https://github.com/zahid492/Realtime-colloboration-App-MEAN-Socket.io"><h4>Link</h4></a>
-                                    <h5 style="color: white;">Telecom Site Handler(2016)</h5>
+                                    <h5 style="color: white;">Telecom Site Assistant(2016)</h5>
                                 </div>
                             </a>
                         </div>
@@ -288,7 +288,7 @@ Prediction Using Neural Network(2015)</h5>
           <div class="arrowpart"></div>
           <div class="exCon">
             <a href="http://interspeed.com.bd/"><h4>Interspeed Digital Solution</h4></a>
-            <h6>Full Stack Software Developer</h6>
+            <h6>Software Developer</h6>
           <div class="workYear">May 2016 to Continue<br>
           </div>
           </div>
@@ -386,49 +386,30 @@ Prediction Using Neural Network(2015)</h5>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="feature-heading text-center">
-						<h2>LATEST BLOGS</h2> 
-						<p>ut believe has request not how comfort evident. Up delight cousins <br> we feeling minutes. Genius has looked end piqued spring. </p>
+						<h2>LATEST BLOGS</h2>
 					</div>
 				</div>
 				<div class="col-md-12 col-sm-12">
 					<div class="feature-wrap">
 						<div class="row">
 						<!-- blog one -->
-							<div class="col-md-4 col-sm-12 col-xm-12">
+							<div class="col-md-4 col-sm-12 col-xm-12" ng-repeat="blog in blogs">
 								
 								<div class="one-blog">
 									<div class="blog-image">
-										<img src="images/blog-image/1.jpg" class="img-responsive" alt="blog-image">
 									</div>
-									<a href="single-post.html"><h4>By spite about do of do allow blush</h4></a>
-									<span class="blog-info"><a href="#" class="blog-info">John Doe</a> - <i class="fa fa-clock-o" aria-hidden="true"></i> 7 January 2017 </span>
-									<p>Quick six blind smart out burst. Perfectly on furniture dejection determine my depending an to. Add short water court fat.  </p>
+									<a ui-sref="app.single_blog({id:blog.link})" target="_blank"><h4 ng-bind="blog.title"></h4></a>
+									<span class="blog-info"><a href="" class="blog-info" ng-bind="blog.author.fullname"></a> - <i class="fa fa-clock-o" aria-hidden="true"></i>{{blog.createdOn | amUtc | amDateFormat:'dddd, MMMM Do YYYY, HH:mm'}}</span>
+									<p ng-bind-html="blog.highlites"></p>
 									
 								</div>
 								
 							</div>
-							<!-- blog two -->
-							<div class="col-md-4 col-sm-12 col-xm-12 blog-color">
-								<div class="one-blog">
-									<div class="blog-image">
-										<img src="images/blog-image/2.jpg" class="img-responsive" alt="blog-image">
-									</div>
-									<a href="single-post.html"><h4>By spite about do of do allow blush</h4></a>
-									<span class="blog-info"><a href="#" class="blog-info">John Doe</a>  - <i class="fa fa-clock-o" aria-hidden="true"></i> 8 January 2017 </span>
-									<p>Quick six blind smart out burst. Perfectly on furniture dejection determine my depending an to. Add short water court fat.  </p>
-								</div>
-							</div>
-							<!-- blog three -->
-							<div class="col-md-4 col-sm-12 col-xm-12 blog-color">
-								<div class="one-blog">
-									<div class="blog-image">
-										<img src="images/blog-image/3.jpg" class="img-responsive" alt="blog-image">
-									</div>
-									<a ui-sref="app.single_blog({id:'121-121212'})"><h4>By spite about do of do allow blush</h4></a>
-									<span class="blog-info"><a href="#" class="blog-info">John Doe</a>  - <i class="fa fa-clock-o" aria-hidden="true"></i> 11 January 2017 </span>
-									<p>Quick six blind smart out burst. Perfectly on furniture dejection determine my depending an to. Add short water court fat.  </p>
-								</div>
-							</div>
+                            <div class="col-md-12  text-right wow fadeInUp"> 
+                            <!-- submit button -->
+                                <button ui-sref="app.blogs"  class="btn btn-black " id="form-submit" type="submit" value="Submit">See all Blogs</button>
+                                <div id="msgSubmit" class="h3 text-center hidden"></div>
+                            </div>
 						</div>
 					</div>
 					<!--  feature wrap end -->

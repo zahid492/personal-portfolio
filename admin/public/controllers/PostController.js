@@ -38,7 +38,10 @@ app.controller('PostController', function(
 				title: $scope.title, 
 				body: $scope.body,
 				banner: $scope.banner,
-				tags:$scope.tags
+				tags:$scope.tags,
+				highlites:$scope.highlites,
+				link:convertToSlug($scope.title),
+				status:$scope.status
 			}).then(function(){
 				$state.go('home');
 				alertService.add("success", "Well done! You successfully added a new post.");
@@ -70,6 +73,16 @@ app.controller('PostController', function(
         return item.name.toLowerCase().indexOf($query.toLowerCase()) != -1;
       });
   };
+
+
+function convertToSlug(Text)
+{
+    return Text
+        .toLowerCase()
+        .replace(/[^\w ]+/g,'')
+        .replace(/ +/g,'-')
+        ;
+}
 
 
 	}

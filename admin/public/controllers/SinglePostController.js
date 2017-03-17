@@ -18,6 +18,9 @@ app.controller('SinglePostController', function(
 		$scope.body = post.body;
 		$scope.tags=post.tags;
 		$scope.images=post.images;
+		$scope.highlites=post.highlites;
+		$scope.status=post.status;
+
 
 
 
@@ -54,6 +57,9 @@ app.controller('SinglePostController', function(
 			post.title = $scope.title;
 			post.body = $scope.body;
 			post.tags=$scope.tags;
+			post.highlites=$scope.highlites;
+			post.link=convertToSlug($scope.title);
+			post.status=$scope.status;
 			posts.edit(post).then(function(){
 				$state.go('post', {id: post._id});
 				alertService.add("success", "Well done! You successfully edited your post.");
@@ -61,6 +67,14 @@ app.controller('SinglePostController', function(
 			alertService.clear();
 		};
 
+		function convertToSlug(Text)
+		{
+		    return Text
+		        .toLowerCase()
+		        .replace(/[^\w ]+/g,'')
+		        .replace(/ +/g,'-')
+		        ;
+		}
 		$scope.incrementUpvotes = function(post){
 			posts.upvote(post);
 		};

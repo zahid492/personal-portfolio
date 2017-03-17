@@ -10,7 +10,10 @@
 				<span>Content:<label>*</label></span>
 				<div text-angular ng-model="body">	 			
 				</div>
-
+				<div class="form-group">
+				  <label for="comment">Comment:</label>
+				  <textarea class="form-control"   ng-model="highlites" rows="5" id="comment"></textarea>
+				</div>		
 			   <tags-input ng-model="tags" display-property="name" placeholder="Add a country" replace-spaces-with-dashes="false">
 				      <auto-complete source="loadCategories($query)"
 				                     min-length="0"
@@ -20,7 +23,13 @@
 				                     template="my-custom-template"></auto-complete>
                 </tags-input>
 			
-
+				<div>
+					<span>Status<label>*</label></span>
+					<select ng-model="status">
+					<option ng-selcted="status===1" value="1">Show</option>
+					<option ng-selected="status===0" value="0">Hide</option>
+					</select>
+				</div>
 				<input type="submit" value="Edit">
 				<a class="cancel-link" ng-href="/#/post/{{post._id}}">Cancel</a>
 			</form>

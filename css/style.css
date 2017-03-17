@@ -142,6 +142,7 @@ a:focus {
 
 a:link,
 a:visited {
+	color: navy;
 	text-decoration: none;
 }
 

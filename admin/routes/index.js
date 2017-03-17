@@ -75,13 +75,38 @@ router.post('/login', function(req, res, next) {
 
 //GET Posts
 router.get('/posts', function(req, res, next) {
-	Post.find().populate('author').sort({createdOn: -1}).exec(function(err, posts) {
+	Post.find().populate('author').sort({createdOn: -1}).select('_id link title highlites createdOn status author').limit(3).skip(0).exec(function(err, posts) {
 		if(err) { return next(err); }
 
 		res.json(posts);
 	});
 });
 
+
+router.get('/allposts', function(req, res, next) {
+  Post.find({status:1}).populate('author').sort({createdOn: -1}).select('_id link title highlites createdOn status author tags').exec(function(err, posts) {
+    if(err) { return next(err); }
+
+    res.json(posts);
+  });
+});
+
+router.get('/tags', function(req, res, next) {
+  Post.find({status:1}).distinct('tags.name').exec(function(err, posts) {
+    if(err) { return next(err); }
+
+    res.json(posts);
+  });
+});
+
+
+router.get('/searchpostbytag/:tag', function(req, res, next) {
+ Post.find({'tags.name':req.params.tag,status:1}).populate('author').sort({createdOn: -1}).select('_id link title highlites createdOn status author tags').exec(function(err, posts) {
+    if(err) { return next(err); }
+
+    res.json(posts);
+  });
+});
 //POST Post
 router.post('/new-post', auth, function(req, res, next) {
 	console.log(req.body);
@@ -101,7 +126,8 @@ router.post('/new-post', auth, function(req, res, next) {
 });
 
 router.param('post', function(req, res, next, id) {
-	var query = Post.findById(id);
+	var query = Post.findOne({'link':id});
+  console.log(id);
 
 	query.exec(function(err, post) {
 		if(err) { return next(err); }
@@ -198,7 +224,7 @@ router.post('/postsiamge/:postId',auth, function(req, res, next) {
   try {
     var crypto=require("crypto");
     console.log("Upload");
-    var imagePath='/Users/digitalsolution/zahid/personal-portfolio/images/blog-image/';
+    var imagePath='/var/www/sample/personal-portfolio/images/blog-image/';
     console.log(imagePath);
   //  console.log(req.body);
 
