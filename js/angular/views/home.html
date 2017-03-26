@@ -72,7 +72,7 @@
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-12 visible-md visible-lg wow fadeInUp" data-wow-delay="0.8s">
 					<div class="profile"> 
-						<img style="border-radius: 50%;max-width:65%;margin-left:22%;margin-top:22%;" src="images/about/about-me-v2.jpg" alt="profile img" class="img-responsive"></div>
+						<img style="border-radius: 50%;max-width:65%;margin-left:22%;margin-top:22%;" src="images/about/about-me-v2edit.jpg" alt="profile img" class="img-responsive"></div>
 				</div>
 			</div>
 			<!--  row  end -->
@@ -93,15 +93,17 @@
 			<div class="row">
 			            <div>
 		                        <a href="" class="btn btn-black">Node JS</a> 
-								<a href="" class="btn btn-black" style="margin: 4px;">Angular JS</a> 
-		                        <a href="" class="btn btn-black">Facebook Graph API</a> 
+								<a href="" class="btn btn-black" style="margin: 4px;">Angular JS</a>  
+
+                                <a href="" class="btn btn-black">Ionic</a>
 							 	<a href="" class="btn btn-black"  style="margin: 4px;">Mongo DB</a> 
 								<a href="" class="btn btn-black">Messenger Bot</a> 
-		                        <a href="" class="btn btn-black">React JS</a> 
+
+                                <a href="" class="btn btn-black">Facebook Graph API</a>
                         </div>
                         <div style="margin: 4px;">
-		                        <a href="" class="btn btn-black">Redis</a>
-		                        <a href="" class="btn btn-black">Ionic</a> 
+                                <a href="" class="btn btn-black">Docker</a> 
+		                        <a href="" class="btn btn-black">Redis</a> 
 		                        <a href="" class="btn btn-black" style="margin: 4px;">Elasticsearch</a> 
                             <a href="" class="btn btn-black" style="margin: 4px;">RabbitMQ</a> 
 		                        <a href="" class="btn btn-black">Grunt</a> 
@@ -381,7 +383,7 @@ Prediction Using Neural Network(2015)</h5>
    
   <!--exprience end-->
 	<!-- section blog start -->
-	<section id="section-blog" class="section-padding">
+	<section id="section-blog" class="section-padding" ng-if="blogs.length>0">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -556,3 +558,4 @@ Prediction Using Neural Network(2015)</h5>
 		<!-- container end -->
 	</footer>
 	<!-- section footer end -->
+   <script type="text/javascript" src="js/type-headline.js"></script>
